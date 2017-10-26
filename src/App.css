@@ -1,3 +1,30 @@
+.btn {
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 5px; }
+  .btn:focus {
+    outline: none; }
+
+.btn--primary {
+  border-color: #0074D9;
+  color: white;
+  background-color: #0074D9; }
+
+.btn--secondary {
+  border-color: #ffa927;
+  color: white;
+  background-color: #ffa927; }
+
+.btn__text {
+  font-size: 28px;
+  padding: 10px;
+  font-weight: 400; }
+
 .App {
   text-align: center; }
 

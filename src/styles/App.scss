@@ -1,0 +1,40 @@
+@import "../components/styles/_all.scss";
+
+.app {
+  width: 100%;
+}
+.app-header {
+  width: 100%;
+  height: 'auto';
+  display: flex;
+  justify-content: center;
+  background-color: #222;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+
+  .app-header-nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+    .app-header-nav-item a {
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+
+      &:hover {
+        color: rebeccapurple;
+      }
+    }
+  }
+}
+
+.main-container {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

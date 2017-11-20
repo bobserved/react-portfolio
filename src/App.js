@@ -13,7 +13,7 @@ import {
   Work,
 } from './layouts'
 import logo from './logo.svg'
-import './styles/App.css'
+import './styles/app.css'
 
 const App = () => {
     return (

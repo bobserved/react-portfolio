@@ -1,18 +1,16 @@
 // @flow
 
-import React, { Component } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
-import { Motion, spring } from 'react-motion'
 import {
   Home,
   About,
   Work,
 } from './layouts'
-import logo from './logo.svg'
 import './styles/app.css'
 
 const App = () => {

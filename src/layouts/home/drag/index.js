@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
+import './index.css'
+
 // fake data generator
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
@@ -34,9 +36,6 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   userSelect: 'none',
   padding: grid * 2,
   margin: `0 0 ${grid}px 0`,
-
-  // change background colour if dragging
-  background: isDragging ? 'lightgreen' : 'grey',
 
   // styles we need to apply on draggables
   ...draggableStyle,
@@ -140,6 +139,7 @@ export class Drag extends Component {
                           snapshot.isDragging,
                           provided.draggableProps.style
                         )}
+                        className={`draggable draggable--${snapshot.isDragging ? 'is-dragging' : 'default'}`}
                       >
                         {item.name} – {index + 1}
                       </div>
@@ -170,6 +170,7 @@ export class Drag extends Component {
                           snapshot.isDragging,
                           provided.draggableProps.style
                         )}
+                        className={`draggable draggable--${snapshot.isDragging ? 'is-dragging' : 'default'}`}
                       >
                         {item.name} – {index + 1}
                       </div>

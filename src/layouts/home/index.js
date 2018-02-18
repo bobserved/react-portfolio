@@ -7,12 +7,18 @@ export class Home extends Component {
     super(props)
     this.state = {
       library: [
-        { id: '0', name: 'React.js', level: 5 },
-        { id: '1', name: 'React Native', level: 5 },
-        { id: '2', name: 'HTML5', level: 5 },
-        { id: '3', name: 'CSS3', level: 4 },
-        { id: '4', name: 'Vanilla JS', level: 4 },
-        { id: '5', name: 'PHP', level: 2 }
+        { id: '0', name: 'PHP' },
+        { id: '1', name: 'Vanilla JS' },
+        { id: '2', name: 'CSS3' },
+        { id: '3', name: 'HTML5' },
+        { id: '4', name: 'React Native' },
+        { id: '5', name: 'React.js' },
+        { id: '6', name: 'Vue JS' },
+        { id: '7', name: 'Angular JS' },
+        { id: '8', name: 'Python' },
+        { id: '9', name: 'Java' },
+        { id: '10', name: 'Swift' },
+        { id: '11', name: 'Animations' }
       ],
       sortedItems: [],
       result: []
@@ -36,13 +42,22 @@ export class Home extends Component {
   }
   renderLib() {
     return (
-      <Drag getItems={this.getItems} items={this.state.library}>
-        <Card text='Drag me!' />
-      </Drag>
+      <Drag getItems={this.getItems} library={this.state.library} />
     )
   }
   renderResult() {
-    return this.state.result.map((item, i) => <li key={i} className="section__list-item" onClick={() => this.addItem(item)}>{item.name}</li>)
+    let val;
+    return this.state.result.map((item, i) => {
+      val = this.state.library.indexOf(this.state.library[i]) === item.level ? 'Match' : 'No match'
+      return <li key={i} className="section__list-item" onClick={() => this.addItem(item)}>{item.name} – {item.level} – {val}</li>
+    })
+  }
+  renderScore() {
+    let score = 0
+    for (let i = 0; i < this.state.result.length; i++) {
+      score = score + this.state.result[i].level
+    }
+    return score
   }
   onChangeHandler = (e, item) => {
     this.setState({ library: this.state.library.map(el => el.name === item.name ?
@@ -61,6 +76,7 @@ export class Home extends Component {
           </ul>
         </div>
         <div className={`section section__result ${this.getBackground()}`}>
+          {this.renderScore()}
           <ul className="section__list">
             {this.renderResult()}
           </ul>

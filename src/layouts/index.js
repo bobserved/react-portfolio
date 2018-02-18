@@ -1,3 +1,3 @@
 export { Home } from './home'
-export { About } from './About'
+export { About } from './about'
 export { Work } from './Work'

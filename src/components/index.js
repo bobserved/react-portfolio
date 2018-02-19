@@ -1,2 +1,5 @@
-export ButtonPrimary from './Button/ButtonPrimary'
-export ButtonSecondary from './Button/ButtonSecondary'
+export { ButtonPrimary } from './Button/ButtonPrimary'
+export { ButtonSecondary } from './Button/ButtonSecondary'
+export { Drop } from './drop'
+export { Drag } from './drag'
+export { Result } from './result'

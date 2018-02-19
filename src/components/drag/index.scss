@@ -1,0 +1,12 @@
+.draggable {
+  width: 100%;
+  height: 54px;
+  border-radius: 4px;
+
+  &--default {
+    background-color: lightcoral;
+  }
+  &--is-dragging {
+    background-color: lightseagreen;
+  }
+}

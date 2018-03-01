@@ -14,7 +14,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   ...draggableStyle
 })
 
-export const Drag = ({ item, index }) => (
+export const Drag = ({ item, index, id }) => (
   <Draggable key={item.id} draggableId={item.id} index={index}>
     {(provided, snapshot) => (
       <div>
@@ -26,7 +26,7 @@ export const Drag = ({ item, index }) => (
             snapshot.isDragging,
             provided.draggableProps.style
           )}
-          className={`draggable draggable--${snapshot.isDragging ? 'is-dragging' : 'default'}`}
+          className={`draggable draggable__${id}--${snapshot.isDragging ? 'is-dragging' : 'default'}`}
         >
           {item.name} – {index + 1}
         </div>

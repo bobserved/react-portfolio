@@ -15,10 +15,10 @@ export const Drop = ({ id, list }) => (
       <div
         ref={provided.innerRef}
         style={getListStyle(snapshot.isDraggingOver)}
-        className={`droppable droppable-${snapshot.isDraggingOver ? 'is-dragging' : 'default'}`}
+        className={`droppable droppable__${id}--${snapshot.isDraggingOver ? 'is-dragging' : 'default'}`}
       >
         {list && list.map((item, index) => (
-          <Drag key={index} item={item} index={index} />
+          <Drag id={id} key={index} item={item} index={index} />
         ))}
         {provided.placeholder}
       </div>

@@ -4,7 +4,7 @@ import { shuffle } from 'd3-array';
 import { easeExpOut } from 'd3-ease';
 import sortBy from 'lodash/sortBy';
 import Surface from '../surface';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import NodeGroup from 'react-move/NodeGroup';
 
 import './index.css'
@@ -23,30 +23,6 @@ const dims = [ // Adjusted dimensions [width, height]
   view[1] - trbl[0] - trbl[2],
 ];
 
-const mockData = [
-  {
-    name: 'Linktype',
-  }, {
-    name: 'Quaxo',
-  }, {
-    name: 'Skynoodle',
-  }, {
-    name: 'Realmix',
-  }, {
-    name: 'Jetpulse',
-  }, {
-    name: 'Chatterbridge',
-  }, {
-    name: 'Riffpedia',
-  }, {
-    name: 'Layo',
-  }, {
-    name: 'Oyoba',
-  }, {
-    name: 'Ntags',
-  },
-];
-
 const radius = (dims[1] / 2) * 0.70;
 
 const pieLayout = pie()
@@ -63,10 +39,6 @@ const outerArcPath = arc()
 
 function mid(d) {
   return Math.PI > (d.startAngle + (d.endAngle - d.startAngle));
-}
-
-function getRandom(min, max) {
-  return Math.floor(Math.random() * (max - (min + 1))) + min;
 }
 
 function getArcs(list) {

@@ -2,11 +2,23 @@
   width: 100%;
   height: 54px;
   border-radius: 4px;
+  
+  &__library {
 
-  &--default {
-    background-color: lightcoral;
+    &--default {
+      background-color: lightcoral;
+    }
+    &--is-dragging {
+      background-color: lightseagreen;
+    }
   }
-  &--is-dragging {
-    background-color: lightseagreen;
+  &__selection {
+
+    &--default {
+      background-color: lightblue;
+    }
+    &--is-dragging {
+      background-color: lightseagreen;
+    }
   }
 }

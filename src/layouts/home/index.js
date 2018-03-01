@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import { DragDropContext } from 'react-beautiful-dnd';
-import { Drag, Drop, Result } from '../../components'
+import { Drop, Result } from '../../components'
+
+import './index.css'
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
@@ -42,47 +43,39 @@ export class Home extends Component {
         { id: '11', name: 'Animations', value: 100 }
       ],
       selection: [],
-      categories: [
-        { type: 'bad', value: 2 },
-        { type: 'good', value: 0 },
-        { type: 'awesome', value: 0 }
-      ],
       score: 0
     }
+    this.onDragStart = this.onDragStart.bind(this)
     this.onDragEnd = this.onDragEnd.bind(this)
   }
   getScore = () => {
-    const { selection, categories } = this.state
+    const { selection } = this.state
     let bad = {type:'bad', value: 0}
-    let good = {type:'good', value: 0}
     let awesome = {type:'awesome', value: 0}
     for(let i = 0; i < selection.length; i++) {
-      if (selection[i].value < 34) {
+      if (selection[i].value < 51) {
         bad.value = bad.value + 1
-      } else if (selection[i].value > 33 && selection[i].value < 64) {
-        good.value = good.value + 1
-      } else if(selection[i].value > 63) {
+      } else if(selection[i].value > 50) {
         awesome.value = awesome.value + 1
       } else {
         console.log('random')
       }
     }
-    let highest = Math.max(bad.value, good.value, awesome.value)
-    this.setState({ score: this.calculate(bad, good, awesome).toFixed(2) * 100 })
+    this.setState({ score: this.calculate(bad, awesome).toFixed(2) * 100 })
   }
-  calculate = (bad, good, awesome) => {
-    console.log(bad, good, awesome)
-    let data = [bad, good, awesome]
+  calculate = (bad, awesome) => {
+    let data = [bad, awesome]
     let max = data.reduce((max, p) => p.value > max ? p.value : max, data[0].value)
     let highest = data.filter(d => d.value === max)
     if (highest[0].type === 'bad') {
-      console.log(highest[0].value / this.state.selection.length)
       return 1 - (highest[0].value / this.state.selection.length)
     }
     else if (highest[0].type === 'awesome') {
-      console.log(highest[0].value / this.state.selection.length)
       return highest[0].value / this.state.selection.length
     }
+  }
+  onDragStart(result) {
+    console.log(result)
   }
   onDragEnd(result) {
     if (!result.destination) {
@@ -144,7 +137,7 @@ export class Home extends Component {
   }
   render() {
     return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
+      <DragDropContext onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
         <div className='main-container'>
           <div className="section section__library">
             <Drop id='library' list={this.state.library} />
@@ -153,8 +146,10 @@ export class Home extends Component {
             <Drop id='selection' list={this.state.selection} />
           </div>
           <div className="section section__result">
+            <h1>Skill chart</h1>
             {this.state.selection.length > 0 && <Result data={this.state.selection} />}
-            <h1>Score: {this.state.score}%</h1>
+            {!this.state.selection.length > 0 && <div className='result-placeholder' />}
+            <h1>Match score: {this.state.score ? this.state.score : 0}%</h1>
             <progress value={this.state.score} max="100" />
           </div>
         </div>

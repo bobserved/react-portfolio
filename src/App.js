@@ -10,6 +10,7 @@ import {
   Home,
   About,
   Work,
+  MatchMaker
 } from './layouts'
 import './styles/app.css'
 
@@ -21,12 +22,13 @@ const App = () => {
             <ul className="app-header-nav">
               <li className="app-header-nav-item"><Link to="/">Home</Link></li>
               <li className="app-header-nav-item"><Link to="/about">About</Link></li>
-              <li className="app-header-nav-item"><Link to="/work">Work</Link></li>
+              <li className="app-header-nav-item"><Link to="/match-maker">You & Me?</Link></li>
             </ul>
           </header>  
           <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
           <Route path="/work" component={Work}/>
+          <Route path="/match-maker" component={MatchMaker}/>
         </div>
       </Router>
     )

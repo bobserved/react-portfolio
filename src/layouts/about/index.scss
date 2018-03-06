@@ -1,23 +1,36 @@
 .about {
   display: flex;
+  flex-direction: column;
   padding: 20px 10%;
 
   .top {
     width: 100%;
-    height: 300px;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
     border: 3px solid black;
 
+    &:hover {
+      .top__item--second {
+        &:before {
+          content : "";
+          position: absolute;
+          left    : 0;
+          bottom  : 0;
+          height  : 0%;
+          width   : 3px;
+          border-left: 3px solid black;
+          transition: all .5s;
+        }
+      }
+    }
+
     &__item {
       flex: 0 1 33.3%;
       height: 100%;
       &--first {
-        display: flex; 
-        flex-direction: column;
-        justify-content: flex-end;
         padding: 16px;
 
         a {
@@ -25,32 +38,75 @@
           font-family: "roboto";
           text-decoration: none;
           color: black;
+          transition: all 0.2s;
+          padding-right: 4px;
+
+          &:hover {
+            color: lightsteelblue;
+            letter-spacing: .2em;
+            transition: all 0.2s;
+          }
         }
       }
       &--second {
         background-image: url('../assets/2.jpg');
         background-size: cover;
-        animation: secondImage 3s infinite;
-        background-position: right;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all .3s;
+        height: 300px;
+        position: relative;
+        transition: all .5s;
+
+        &:before {
+          content : "";
+          position: absolute;
+          left    : 0;
+          bottom  : 0;
+          height  : 33%;
+          width   : 3px;
+          border-left: 3px solid black;
+          transition: all .5s;
+        }
       }
     }
   }
 }
-
-@keyframes secondImage {
+.anim {
+  background-image: url('../assets/2-2.jpg') !important;
+  transition: all 1s;
+}
+@keyframes fade {
   0% {
-    background-image: url('../assets/2.jpg');
+    fill: rgba(255, 255, 255, .1);
   }
   74% {
-    background-image: url('../assets/2.jpg');
+    fill: rgba(255, 255, 255, .4);
   }
   75% {
-    background-image: url('../assets/2-2.jpg');
+    fill: rgba(255, 255, 255, .8);
   }
   76% {
-    background-image: url('../assets/2.jpg');
+    fill: rgba(255, 255, 255, .3);
   }
   100% {
-    background-image: url('../assets/2.jpg');
+    fill: rgba(255, 255, 255, .1);
+  }
+}
+@keyframes blink {
+  0% {
+    fill: rgba(70, 255, 240, 0);
+  }
+  74% {
+    fill: rgba(70, 255, 240, 0.199);
+  }
+  75% {
+    fill: rgba(70, 255, 240, 0.63);
+  }
+  76% {
+    fill: rgba(70, 255, 240, 0.247);
+  }
+  100% {
+    fill: rgba(70, 255, 240, 0);
   }
 }

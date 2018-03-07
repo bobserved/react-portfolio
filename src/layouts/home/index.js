@@ -7,7 +7,7 @@ export class Home extends Component {
     super(props)
     this.state = {
       className: 'iphone-7',
-      model: 'iPhone 7',
+      activeModel: 'iPhone 7',
       models: [
         {
           id: 0,
@@ -27,16 +27,16 @@ export class Home extends Component {
       ]
     }
   }
-  changeModel = (className, model) => {
-    this.setState({ className, model })
+  changeModel = (className, activeModel) => {
+    this.setState({ className, activeModel })
   }
   render() {
-    const { className, model, models } = this.state
+    const { className, activeModel, models } = this.state
     return (
       <div className='home'>
         <div className="home__btn-container">
         {models && models.map((model, i) => (
-          <button key={i} className="home__btn" onClick={() => this.changeModel(model.class, model.name)}>{model.name}</button>
+          <button key={i} className={`home__btn ${activeModel === model.name ? 'active' : ''}`} onClick={() => this.changeModel(model.class, model.name)}>{model.name}</button>
         ))
         }
         </div>

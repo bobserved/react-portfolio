@@ -4,14 +4,28 @@
   padding: 20px 10%;
   &__btn-container {
     display: flex;
-    justify-content: center;
+    width: 50%;
+    align-self: center;
+    justify-content: space-around;
     margin: 0 0 32px 0;
   }
   &__btn {
     flex: 0 1 25%;
+    font-size: 18px;
     padding: 12px;
-    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
 
+    &.active {
+      color: lightsteelblue;
+      letter-spacing: .2em;
+    }
+    &:hover {
+      color: lightsteelblue;
+      letter-spacing: .2em;
+      transition: all 0.2s;
+    }
     &:focus {
       outline: none;
     }

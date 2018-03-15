@@ -6,36 +6,53 @@ export class Work extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      boxes: [
-        {id: 0},{id: 1},{id: 2},{id: 3},{id: 4},{id: 5},
-        {id: 6},{id: 7},{id: 8},{id: 9},{id: 10},{id: 11},
-        {id: 12},{id: 13},{id: 14},{id: 15},{id: 16},{id: 17}
+      className: 'iphone-7',
+      activeModel: 'iPhone 7',
+      models: [
+        {
+          id: 0,
+          name: 'iPhone 6',
+          class: 'iphone-6'
+        },
+        {
+          id: 1,
+          name: 'iPhone 7',
+          class: 'iphone-7'
+        },
+        {
+          id: 2,
+          name: 'iPhone X',
+          class: 'iphone-x'
+        }
       ]
     }
   }
-  addClass = (id) => {
-    let el = document.getElementById(id)
-    el.classList.add("work--translucent");
-  }
-  removeClass = (id) => {
-    let el = document.getElementById(id)
-    el.classList.remove("work--translucent");
-  }
-  renderBoxes() {
-
+  changeModel = (className, activeModel) => {
+    this.setState({ className, activeModel })
   }
   render() {
-    const { boxes } = this.state
+    const { className, activeModel, models } = this.state
     return (
-      <div className='work'>
-        {boxes && boxes.map((box, i) => (
-          <div
-            id={box.id}
-            className="work__box"
-            onMouseOver={() => this.addClass(box.id)}
-            onMouseLeave={() => this.removeClass(box.id)}
-          ></div>
-        ))}
+      <div className='main-container home'>
+        <div></div>
+        <div className="home__btn-container">
+        {models && models.map((model, i) => (
+          <button key={i} className={`home__btn ${activeModel === model.name ? 'active' : ''}`} onClick={() => this.changeModel(model.class, model.name)}>{model.name}</button>
+        ))
+        }
+        </div>
+        <div className="phone">
+          <div className={`phone__outer phone__outer--${className}`}> 
+            <div className="speaker-container">
+              <div className="speaker-container__speaker"></div>
+            </div>
+            <div className={`inner`}>
+            </div>
+            <div className="home-btn-container">
+              <div className="home-btn-container__home-btn"></div>
+            </div>  
+          </div>
+        </div>
       </div>
     )
   }

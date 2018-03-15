@@ -22,7 +22,7 @@ progress {
   height: 'auto';
   display: flex;
   justify-content: center;
-  background-color: #222;
+  background-color: #000;
   padding: 20px;
   box-sizing: border-box;
   color: white;
@@ -40,7 +40,7 @@ progress {
       font-family: "roboto";
 
       &:hover {
-        color: rebeccapurple;
+        color: lightsteelblue;
       }
     }
   }

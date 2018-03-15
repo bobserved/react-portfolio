@@ -6,52 +6,45 @@ export class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      className: 'iphone-7',
-      activeModel: 'iPhone 7',
-      models: [
-        {
-          id: 0,
-          name: 'iPhone 6',
-          class: 'iphone-6'
-        },
-        {
-          id: 1,
-          name: 'iPhone 7',
-          class: 'iphone-7'
-        },
-        {
-          id: 2,
-          name: 'iPhone X',
-          class: 'iphone-x'
-        }
-      ]
+      reserved: [2,5, 7, 8, 9, 11, 15, 19, 20, 21, 26, 27, 28, 29, 31, 32, 35, 39, 43, 45, 50, 53, 55, 56, 57, 59, 60, 61, 63, 64, 65, 67, 68, 69],
+      boxes: [...Array(72)].map((_, i) => ++i)
     }
   }
-  changeModel = (className, activeModel) => {
-    this.setState({ className, activeModel })
+  addClass = (id) => {
+    let el = document.getElementById(id)
+    el.classList.add("boxes--translucent");
+  }
+  removeClass = (id) => {
+    let el = document.getElementById(id)
+    el.classList.remove("boxes--translucent");
+  }
+  randomColor = () => {
+    let length = 6;
+    let chars = '0123456789ABCDEF';
+    let hex = '#';
+    while(length--) hex += chars[(Math.random() * 16) | 0];
+    return hex;
   }
   render() {
-    const { className, activeModel, models } = this.state
+    const { boxes } = this.state
     return (
-      <div className='main-container home'>
-        <div></div>
-        <div className="home__btn-container">
-        {models && models.map((model, i) => (
-          <button key={i} className={`home__btn ${activeModel === model.name ? 'active' : ''}`} onClick={() => this.changeModel(model.class, model.name)}>{model.name}</button>
-        ))
-        }
-        </div>
-        <div className="phone">
-          <div className={`phone__outer phone__outer--${className}`}> 
-            <div className="speaker-container">
-              <div className="speaker-container__speaker"></div>
-            </div>
-            <div className={`inner`}>
-            </div>
-            <div className="home-btn-container">
-              <div className="home-btn-container__home-btn"></div>
-            </div>  
-          </div>
+      <div className='work'>
+        <div className="boxes">
+          {boxes && boxes.map((box, i) => {
+            return (
+            <div
+              key={i}
+              id={`box-${i}`}
+              className="boxes__box"
+              onMouseOver={() => this.addClass(`box-${i}`)}
+              onMouseLeave={() => this.removeClass(`box-${i}`)}
+              style={{
+                gridColumn: i < 24 ? i+1 : (i < 48 ? i - 23 : i - 47),
+                gridRow: i < 24 ? 1 : (i < 48 ? 2 : 3),
+                backgroundColor: this.state.reserved.includes(i) ? '#000' : this.randomColor()
+              }}
+            ></div>
+          )})}
         </div>
       </div>
     )

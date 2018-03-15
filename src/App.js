@@ -1,19 +1,18 @@
 // @flow
 
-import React, { Component } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
-import { Motion, spring } from 'react-motion'
 import {
   Home,
   About,
   Work,
+  MatchMaker
 } from './layouts'
-import logo from './logo.svg'
-import './styles/App.css'
+import './styles/app.css'
 
 const App = () => {
     return (
@@ -23,12 +22,13 @@ const App = () => {
             <ul className="app-header-nav">
               <li className="app-header-nav-item"><Link to="/">Home</Link></li>
               <li className="app-header-nav-item"><Link to="/about">About</Link></li>
-              <li className="app-header-nav-item"><Link to="/work">Work</Link></li>
+              <li className="app-header-nav-item"><Link to="/match-maker">You & Me?</Link></li>
             </ul>
           </header>  
           <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
           <Route path="/work" component={Work}/>
+          <Route path="/match-maker" component={MatchMaker}/>
         </div>
       </Router>
     )

@@ -1,0 +1,24 @@
+.droppable {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: #fafafa;
+  &__library {
+
+    &--default {
+      background-color: #fafafa;
+    }
+    &--is-dragging {
+      background-color: #cccccc;
+    }
+  }
+  &__selection {
+
+    &--default {
+      background-color: #fafafa;
+    }
+    &--is-dragging {
+      background-color: lightgreen;
+    }
+  }
+}

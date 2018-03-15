@@ -48,6 +48,12 @@ progress {
 
 // GLOBAL 
 
+.main-container {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .section {
     width: 50%;
@@ -97,7 +103,7 @@ progress {
       cursor: move; 
     }
   }
-
+}
 
 .red {
   background: red;

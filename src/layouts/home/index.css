@@ -1,0 +1,19 @@
+.work {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(25%, 50%); }
+  .work .boxes {
+    height: calc(100vh - 100px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-auto-rows: minmax(25%, 25%, 25%);
+    background-image: url("../../assets/2.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+    .work .boxes--translucent {
+      opacity: 0.2;
+      transition: all .5s; }
+  .work .something {
+    background: lightsalmon; }

@@ -1,0 +1,205 @@
+.main-container {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.btn {
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 5px; }
+  .btn:focus {
+    outline: none; }
+
+.btn--primary {
+  border-color: #0074D9;
+  color: white;
+  background-color: #0074D9; }
+
+.btn--secondary {
+  border-color: #ffa927;
+  color: white;
+  background-color: #ffa927; }
+
+.btn__text {
+  font-size: 28px;
+  padding: 10px;
+  font-weight: 400; }
+
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10%; }
+  .about .top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 3px solid black; }
+    .about .top:hover .top__item--second:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 0%;
+      width: 3px;
+      border-left: 3px solid black;
+      transition: all .5s; }
+    .about .top__item {
+      flex: 0 1 33.3%;
+      height: 100%; }
+      .about .top__item--first {
+        padding: 16px; }
+        .about .top__item--first a {
+          font-size: 18px;
+          font-family: "roboto";
+          text-decoration: none;
+          color: black;
+          transition: all 0.2s;
+          padding-right: 4px; }
+          .about .top__item--first a:hover {
+            color: lightsteelblue;
+            letter-spacing: .2em;
+            transition: all 0.2s; }
+      .about .top__item--second {
+        background-image: url("../assets/2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all .3s;
+        height: 300px;
+        position: relative;
+        transition: all .5s; }
+        .about .top__item--second:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 33%;
+          width: 3px;
+          border-left: 3px solid black;
+          transition: all .5s; }
+
+.anim {
+  background-image: url("../assets/2-2.jpg") !important;
+  transition: all 1s; }
+
+@keyframes fade {
+  0% {
+    fill: rgba(255, 255, 255, 0.1); }
+  74% {
+    fill: rgba(255, 255, 255, 0.4); }
+  75% {
+    fill: rgba(255, 255, 255, 0.8); }
+  76% {
+    fill: rgba(255, 255, 255, 0.3); }
+  100% {
+    fill: rgba(255, 255, 255, 0.1); } }
+
+@keyframes blink {
+  0% {
+    fill: rgba(70, 255, 240, 0); }
+  74% {
+    fill: rgba(70, 255, 240, 0.199); }
+  75% {
+    fill: rgba(70, 255, 240, 0.63); }
+  76% {
+    fill: rgba(70, 255, 240, 0.247); }
+  100% {
+    fill: rgba(70, 255, 240, 0); } }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+progress {
+  width: 75%; }
+
+.app {
+  width: 100%; }
+
+.app-header {
+  width: 100%;
+  height: 'auto';
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white; }
+  .app-header .app-nav {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none; }
+    .app-header .app-nav__item a {
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      font-family: "roboto"; }
+      .app-header .app-nav__item a:hover {
+        color: lightsteelblue; }
+
+.main-container {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .main-container .section {
+    width: 50%;
+    height: 100vh; }
+    .main-container .section__library {
+      width: 15%;
+      height: 100%;
+      background: lightpink;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center; }
+    .main-container .section__selection {
+      width: 15%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center; }
+    .main-container .section__result {
+      width: 70%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+    .main-container .section__list {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+    .main-container .section__list-item {
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: move; }
+
+.red {
+  background: red; }
+
+.green {
+  background: green; }

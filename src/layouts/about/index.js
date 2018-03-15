@@ -11,7 +11,7 @@ export class About extends PureComponent {
   }
   render() {
     return (
-      <div className='about'>
+      <div className='main-container about'>
         <div className="top" onMouseOver={() => this.addClass()} onMouseLeave={() => this.removeClass()}>
           <div className="top__item top__item--first">
             <a href='mailto:robert@bob-acken.com'>mail</a>

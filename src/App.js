@@ -19,10 +19,10 @@ const App = () => {
       <Router>
         <div className="app">
           <header className="app-header">
-            <ul className="app-header-nav">
-              <li className="app-header-nav-item"><Link to="/">Home</Link></li>
-              <li className="app-header-nav-item"><Link to="/about">About</Link></li>
-              <li className="app-header-nav-item"><Link to="/match-maker">You & Me?</Link></li>
+            <ul className="app-nav">
+              <li className="app-nav__item"><Link to="/">Home</Link></li>
+              <li className="app-nav__item"><Link to="/about">About</Link></li>
+              <li className="app-nav__item"><Link to="/match-maker">You & Me?</Link></li>
             </ul>
           </header>  
           <Route exact path="/" component={Home}/>

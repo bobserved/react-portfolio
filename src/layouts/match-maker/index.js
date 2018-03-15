@@ -138,7 +138,7 @@ export class MatchMaker extends Component {
   render() {
     return (
       <DragDropContext onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
-        <div className='main-container'>
+        <div className='main-container match-maker'>
           <div className="section section__library">
             <Drop id='library' list={this.state.library} />
           </div>

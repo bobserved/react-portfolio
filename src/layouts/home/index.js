@@ -33,7 +33,8 @@ export class Home extends Component {
   render() {
     const { className, activeModel, models } = this.state
     return (
-      <div className='home'>
+      <div className='main-container home'>
+        <div></div>
         <div className="home__btn-container">
         {models && models.map((model, i) => (
           <button key={i} className={`home__btn ${activeModel === model.name ? 'active' : ''}`} onClick={() => this.changeModel(model.class, model.name)}>{model.name}</button>

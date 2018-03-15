@@ -1,0 +1,29 @@
+.btn {
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 5px;
+
+    &:focus {
+        outline: none;
+    }
+}
+.btn--primary {
+    border-color: #0074D9;
+    color: white;
+    background-color: #0074D9;
+}
+.btn--secondary {
+    border-color: rgb(255, 169, 39);
+    color: white;
+    background-color: rgb(255, 169, 39);
+}
+.btn__text {
+    font-size: 28px;
+    padding: 10px;
+    font-weight: 400;
+  }

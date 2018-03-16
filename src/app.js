@@ -23,7 +23,7 @@ const App = () => {
               <li className="app-nav__item"><Link to="/">Home</Link></li>
               <li className="app-nav__item"><Link to="/work">Work</Link></li>
               <li className="app-nav__item"><Link to="/about">About</Link></li>
-              <li className="app-nav__item"><Link to="/match-maker">You & Me?</Link></li>
+              <li className="app-nav__item"><Link to="/match-maker">WIP</Link></li>
             </ul>
           </header>  
           <Route exact path="/" component={Home}/>

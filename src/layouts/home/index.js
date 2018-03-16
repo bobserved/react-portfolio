@@ -28,7 +28,7 @@ export class Home extends Component {
   render() {
     const { boxes } = this.state
     return (
-      <div className='work'>
+      <div className='home'>
         <div className="boxes">
           {boxes && boxes.map((box, i) => {
             return (

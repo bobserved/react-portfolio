@@ -1,7 +1,16 @@
-.home {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 10%;
+.work {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(25%, 50%);
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightblue;
+    height: 80vh;
+  }
+
   &__btn-container {
     display: flex;
     width: 50%;
@@ -46,14 +55,15 @@
 
       // IPHONE X
       &--iphone-x {
-        height: 717px;
-        width: 342px;
+        // height: 717px;
+        height: 60vh;
+        width: 260px;
         transition: all .3s;
 
         .speaker-container {
           position: absolute;
           top: 0;
-          width: 75%;
+          width: 65%;
           height: 25px;
           background-color: #1f1f1f;
           border-bottom-left-radius: 20px;
@@ -71,7 +81,7 @@
         .inner {
           flex: 12;
           background-color: #1f1f1f;
-          width: 322px;
+          width: 242px;
           position: relative;
           transition: all .3s;
         }
@@ -81,7 +91,7 @@
           position: absolute;
           left: 0;
           top: 0;
-          width: 322px;
+          width: 242px;
           height: 98%;
           z-index: 1;
           opacity: 1;
@@ -97,7 +107,7 @@
           background-size: contain;
           animation: fadex 1s linear;
         }
-        .home-btn-container {
+        .work-btn-container {
           width: 100%;
           display: none;
           align-items: center;
@@ -105,7 +115,7 @@
           position: absolute;
           bottom: 12px;
           
-          &__home-btn {
+          &__work-btn {
             width: 50%;
             height: 6px;
             border: 1px solid black;
@@ -116,8 +126,9 @@
       
       // IPHONE 7
       &--iphone-7 {
-        height: 651px;
-        width: 310px;
+        // height: 651px;
+        height: 55vh;
+        width: 240px;
         transition: all .3s;
 
         .speaker-container {
@@ -160,12 +171,12 @@
           background-size: contain;
           animation: fade7 1s linear;
         }
-        .home-btn-container {
+        .work-btn-container {
           flex: 0 0 10%;
           display: flex;
           align-items: center;
           
-          &__home-btn {
+          &__work-btn {
             width: 50px;
             height: 50px;
             border: 1px solid rgba(0,0,0,0.1);
@@ -178,8 +189,9 @@
 
       // IPHONE 6
       &--iphone-6 {
-        height: 600px;
-        width: 304px;
+        // height: 600px;
+        height: 50vh;
+        width: 230px;
         transition: all .3s;
 
         .speaker-container {
@@ -222,14 +234,14 @@
           background-size: contain;
           animation: fade6 1s linear;
         }
-        .home-btn-container {
+        .work-btn-container {
           flex: 1 0 5%;
           display: flex;
           align-items: center;
           
-          &__home-btn {
-            width: 40px;
-            height: 40px;
+          &__work-btn {
+            width: 30px;
+            height: 30px;
             background-color: rgba(255,255,255,0.01);
             box-shadow: 2px 1px 3px rgba(255,255,255,0.1);
             border: 1px solid rgba(0,0,0,0.1);

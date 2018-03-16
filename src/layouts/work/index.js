@@ -33,25 +33,28 @@ export class Work extends Component {
   render() {
     const { className, activeModel, models } = this.state
     return (
-      <div className='main-container home'>
-        <div></div>
-        <div className="home__btn-container">
-        {models && models.map((model, i) => (
-          <button key={i} className={`home__btn ${activeModel === model.name ? 'active' : ''}`} onClick={() => this.changeModel(model.class, model.name)}>{model.name}</button>
-        ))
-        }
-        </div>
-        <div className="phone">
-          <div className={`phone__outer phone__outer--${className}`}> 
-            <div className="speaker-container">
-              <div className="speaker-container__speaker"></div>
-            </div>
-            <div className={`inner`}>
-            </div>
-            <div className="home-btn-container">
-              <div className="home-btn-container__home-btn"></div>
-            </div>  
+      <div className='work'>
+        <div className='work__box'>
+          <div className="work__btn-container">
+          {models && models.map((model, i) => (
+            <button key={i} className={`work__btn ${activeModel === model.name ? 'active' : ''}`} onClick={() => this.changeModel(model.class, model.name)}>{model.name}</button>
+          ))
+          }
           </div>
+          <div className="phone">
+            <div className={`phone__outer phone__outer--${className}`}> 
+              <div className="speaker-container">
+                <div className="speaker-container__speaker"></div>
+              </div>
+              <div className={`inner`}>
+              </div>
+              <div className="work-btn-container">
+                <div className="work-btn-container__work-btn"></div>
+              </div>  
+            </div>
+          </div>
+        </div>
+        <div className='work__box'>
         </div>
       </div>
     )

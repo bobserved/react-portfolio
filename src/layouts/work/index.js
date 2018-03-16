@@ -1,27 +1,16 @@
 import React, { Component } from 'react'
-import { Phone } from './collection'
+import collection from './collection'
+import { WORKS } from '../../constants'
 import './index.css'
 
 export class Work extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      reserved: [2, 3, 4, 9, 10, 11, 16, 17, 18, 23, 24, 25],
-      boxes: [...Array(28)].map((_, i) => ++i),
-      works: [
-        {
-          id: 0,
-          name: 'Phone'
-        },
-        {
-          id: 1,
-          name: 'Test'
-        },
-        {
-          id: 2,
-          name: 'Test 2'
-        }
-      ],
+      selectedWork: {
+        id: 1,
+        name: 'phone'
+      },
       col: 7,
       row: 4,
       phone: {
@@ -68,33 +57,41 @@ export class Work extends Component {
     phone.activeModel = activeModel
     this.setState({ phone })
   }
-  selectWork = (index) => {
-    this.setState({ selectedWork: this.state.works.find(obj => obj.id === index) })
+  selectWork = (work) => {
+    this.setState({ selectedWork: WORKS.items.find(obj => obj.name === work) })
   }
   renderWork() {
-    return <Phone {...this.state.phone} changeModel={this.changeModel} />
+    const Work = collection[this.state.selectedWork.name]
+    return <Work {...this.state.phone} changeModel={this.changeModel} />
+  }
+  renderPreview(work) {
+    return (
+      <div>
+        <h1>{work}</h1>
+      </div>
+    )
   }
   render() {
-    const { boxes, col, row, reserved } = this.state
+    let col = WORKS.items.length
     return (
       <div className='work'>
-        <div className="boxes" style={{ gridTemplateColumns: `repeat(${col}, 1fr)` }}>
-          {boxes && boxes.map((box, i) => {
+        <div className="boxes">
+          {WORKS.items && WORKS.items.map((box, i) => {
             return (
             <div
               key={i}
               id={`box-${i}`}
               className="boxes__box"
-              onMouseOver={() => i !== 2 && this.addClass(`box-${i}`)}
-              onMouseLeave={() => i !== 2 && this.removeClass(`box-${i}`)}
-              onClick={() => i !== 2 && this.selectWork(i)}
+              onMouseOver={() => i !== 0 && this.addClass(`box-${i}`)}
+              onMouseLeave={() => i !== 0 && this.removeClass(`box-${i}`)}
+              onClick={() => box.name && this.selectWork(box.name)}
               style={{
-                gridColumn: i < 7 ? i+1 : (i < 14 ? i - 6 : (i < 21 ? i - 13 : i - 20)),
-                gridRow: i < 7 ? 1 : (i < 14 ? 2 : (i < 21 ? 3 : 4)),
-                backgroundColor: reserved.includes(i) ? 'transparent' : this.randomColor()
+                background: box.img ? `black url(${box.img}) center/cover no-repeat` : (i === 0 ? 'transparent' : this.randomColor()),
+                cursor: box.img ? 'pointer' : 'default'
               }}
             >
-              {i === 2 && this.renderWork()}
+              {i === 0 && this.renderWork()}
+              {box.name && this.renderPreview(box.name)}
             </div>
           )})}
         </div>

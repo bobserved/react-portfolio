@@ -6,13 +6,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: lightblue;
-    height: 80vh; }
+    justify-content: space-between;
+    height: 70vh;
+    border: 1px solid black; }
   .work__btn-container {
     display: flex;
-    width: 50%;
+    width: 100%;
     align-self: center;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0 0 32px 0; }
   .work__btn {
     flex: 0 1 25%;
@@ -20,7 +21,8 @@
     padding: 12px;
     border: none;
     cursor: pointer;
-    transition: all 0.2s; }
+    transition: all 0.2s;
+    background-color: transparent; }
     .work__btn.active {
       color: lightsteelblue;
       letter-spacing: .2em; }

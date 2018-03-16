@@ -1,14 +1,30 @@
 .work {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: minmax(25%, 50%); }
+  .work .boxes {
+    height: calc(100vh - 100px);
+    width: 100%;
+    display: grid;
+    grid-auto-rows: minmax(25%, 50%); }
+    .work .boxes__box:nth-of-type(3) {
+      grid-area: 5 / 6 / 1 / 3 !important;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .work .boxes--translucent {
+      opacity: 0.2;
+      transition: all .5s; }
   .work__box {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 70vh;
-    border: 1px solid black; }
+    padding: 48px 0;
+    z-index: 9999; }
   .work__btn-container {
     display: flex;
     width: 100%;
@@ -18,17 +34,16 @@
   .work__btn {
     flex: 0 1 25%;
     font-size: 18px;
-    padding: 12px;
     border: none;
     cursor: pointer;
     transition: all 0.2s;
     background-color: transparent; }
     .work__btn.active {
       color: lightsteelblue;
-      letter-spacing: .2em; }
+      letter-spacing: .1em; }
     .work__btn:hover {
       color: lightsteelblue;
-      letter-spacing: .2em;
+      letter-spacing: .1em;
       transition: all 0.2s; }
     .work__btn:focus {
       outline: none; }
@@ -45,13 +60,13 @@
       overflow: hidden;
       position: relative; }
       .work .phone__outer--iphone-x {
-        height: 60vh;
-        width: 260px;
+        height: 540px;
+        width: 267px;
         transition: all .3s; }
         .work .phone__outer--iphone-x .speaker-container {
           position: absolute;
           top: 0;
-          width: 65%;
+          width: 60%;
           height: 25px;
           background-color: #1f1f1f;
           border-bottom-left-radius: 20px;
@@ -102,27 +117,27 @@
             height: 6px;
             border: 1px solid black;
             border-radius: 3px; }
-      .work .phone__outer--iphone-7 {
-        height: 55vh;
-        width: 240px;
+      .work .phone__outer--iphone-8 {
+        height: 596px;
+        width: 293px;
         transition: all .3s; }
-        .work .phone__outer--iphone-7 .speaker-container {
+        .work .phone__outer--iphone-8 .speaker-container {
           flex: 0 0 10%;
           display: flex;
           align-items: center; }
-          .work .phone__outer--iphone-7 .speaker-container__speaker {
+          .work .phone__outer--iphone-8 .speaker-container__speaker {
             width: 60px;
             height: 4px;
             background-color: rgba(255, 255, 255, 0.01);
             border-radius: 2px;
             box-shadow: 2px 1px 3px rgba(255, 255, 255, 0.1); }
-        .work .phone__outer--iphone-7 .inner {
+        .work .phone__outer--iphone-8 .inner {
           flex: 6;
           background-color: #1f1f1f;
-          width: 290px;
+          width: 293px;
           position: relative;
           transition: all .3s; }
-        .work .phone__outer--iphone-7 .inner:before {
+        .work .phone__outer--iphone-8 .inner:before {
           content: ' ';
           display: block;
           position: absolute;
@@ -141,38 +156,38 @@
           -webkit-background-size: contain;
           background-size: contain;
           animation: fade7 1s linear; }
-        .work .phone__outer--iphone-7 .work-btn-container {
+        .work .phone__outer--iphone-8 .work-btn-container {
           flex: 0 0 10%;
           display: flex;
           align-items: center; }
-          .work .phone__outer--iphone-7 .work-btn-container__work-btn {
+          .work .phone__outer--iphone-8 .work-btn-container__work-btn {
             width: 50px;
             height: 50px;
             border: 1px solid rgba(0, 0, 0, 0.1);
             background-color: rgba(255, 255, 255, 0.01);
             border-radius: 25px;
             box-shadow: 2px 1px 3px rgba(255, 255, 255, 0.1); }
-      .work .phone__outer--iphone-6 {
-        height: 50vh;
-        width: 230px;
+      .work .phone__outer--iphone-7 {
+        height: 530px;
+        width: 257px;
         transition: all .3s; }
-        .work .phone__outer--iphone-6 .speaker-container {
+        .work .phone__outer--iphone-7 .speaker-container {
           flex: 1 0 5%;
           display: flex;
           align-items: center; }
-          .work .phone__outer--iphone-6 .speaker-container__speaker {
+          .work .phone__outer--iphone-7 .speaker-container__speaker {
             width: 50px;
             height: 4px;
             background-color: rgba(255, 255, 255, 0.01);
             border-radius: 2px;
             box-shadow: 2px 1px 3px rgba(255, 255, 255, 0.1); }
-        .work .phone__outer--iphone-6 .inner {
+        .work .phone__outer--iphone-7 .inner {
           flex: 20;
           background-color: #1f1f1f;
-          width: 274px;
+          width: 232px;
           position: relative;
           transition: all .3s; }
-        .work .phone__outer--iphone-6 .inner:before {
+        .work .phone__outer--iphone-7 .inner:before {
           content: ' ';
           display: block;
           position: absolute;
@@ -191,11 +206,11 @@
           -webkit-background-size: contain;
           background-size: contain;
           animation: fade6 1s linear; }
-        .work .phone__outer--iphone-6 .work-btn-container {
+        .work .phone__outer--iphone-7 .work-btn-container {
           flex: 1 0 5%;
           display: flex;
           align-items: center; }
-          .work .phone__outer--iphone-6 .work-btn-container__work-btn {
+          .work .phone__outer--iphone-7 .work-btn-container__work-btn {
             width: 30px;
             height: 30px;
             background-color: rgba(255, 255, 255, 0.01);

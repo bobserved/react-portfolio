@@ -64,15 +64,7 @@ export class Work extends Component {
     const Work = collection[this.state.selectedWork.name]
     return <Work {...this.state.phone} changeModel={this.changeModel} />
   }
-  renderPreview(work) {
-    return (
-      <div>
-        <h1>{work}</h1>
-      </div>
-    )
-  }
   render() {
-    let col = WORKS.items.length
     return (
       <div className='work'>
         <div className="boxes">
@@ -86,12 +78,11 @@ export class Work extends Component {
               onMouseLeave={() => i !== 0 && this.removeClass(`box-${i}`)}
               onClick={() => box.name && this.selectWork(box.name)}
               style={{
-                background: box.img ? `black url(${box.img}) center/cover no-repeat` : (i === 0 ? 'transparent' : this.randomColor()),
+                background: box.img ? `transparent url(${box.img}) center/contain no-repeat` : (i === 0 ? 'transparent' : this.randomColor()),
                 cursor: box.img ? 'pointer' : 'default'
               }}
             >
               {i === 0 && this.renderWork()}
-              {box.name && this.renderPreview(box.name)}
             </div>
           )})}
         </div>

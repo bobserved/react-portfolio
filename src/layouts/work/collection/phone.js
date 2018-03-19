@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Phone = ({ models, activeModel, className, changeModel }) => {
   return (
-  <div className='work__box'>
+  <div className='work__box' style={{ paddingBottom: 64 }}>
     <div className="work__btn-container">
       {models && models.map((model, i) => (
         <button

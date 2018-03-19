@@ -157,46 +157,6 @@ progress {
   display: flex;
   justify-content: center;
   align-items: center; }
-  .main-container .section {
-    width: 50%;
-    height: 100vh; }
-    .main-container .section__library {
-      width: 15%;
-      height: 100%;
-      background: lightpink;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center; }
-    .main-container .section__selection {
-      width: 15%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center; }
-    .main-container .section__result {
-      width: 70%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center; }
-    .main-container .section__list {
-      width: 100%;
-      height: 50%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0; }
-    .main-container .section__list-item {
-      color: white;
-      font-size: 36px;
-      font-weight: bold;
-      cursor: move; }
 
 .red {
   background: red; }

@@ -79,7 +79,8 @@ export class Work extends Component {
               onClick={() => box.name && this.selectWork(box.name)}
               style={{
                 background: box.img ? `transparent url(${box.img}) center/contain no-repeat` : (i === 0 ? 'transparent' : this.randomColor()),
-                cursor: box.img ? 'pointer' : 'default'
+                cursor: box.img ? 'pointer' : 'default',
+                boxShadow: i === 5 && this.state.selectedWork.name === 'match-maker' ? '16px -40px 14px rgba(0,0,0,0.2)' : (i === 9 && this.state.selectedWork.name === 'match-maker' ? '-16px -40px 14px rgba(0,0,0,0.2)' : null)
               }}
             >
               {i === 0 && this.renderWork()}

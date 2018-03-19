@@ -41,7 +41,8 @@ export class Home extends Component {
               style={{
                 gridColumn: i < 24 ? i+1 : (i < 48 ? i - 23 : i - 47),
                 gridRow: i < 24 ? 1 : (i < 48 ? 2 : 3),
-                backgroundColor: this.state.reserved.includes(i) ? '#000' : this.randomColor()
+                backgroundColor: this.state.reserved.includes(i) ? '#000' : this.randomColor(),
+                transition: 'all 1s'
               }}
             ></div>
           )})}

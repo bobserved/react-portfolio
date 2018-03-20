@@ -1,3 +1,5 @@
 .result-container {
+  flex-grow: 1;
   width: 100%;
-  min-height: 600px; }
+  align-self: center;
+  display: flex; }

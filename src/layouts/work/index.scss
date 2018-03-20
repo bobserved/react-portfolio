@@ -1,29 +1,72 @@
-.home {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 10%;
+.work {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(25%, 50%);
+
+  .boxes {
+    height: calc(100vh - 100px);
+    width: 100%;
+    display: grid;
+    grid-auto-rows: 25%;
+    grid-auto-columns: 14.29%;
+    grid-auto-flow: column;
+
+    &__box:nth-of-type(1) {
+      min-width: 85px;
+      grid-area: 5 / 6 / 1 / 3 !important;
+      z-index: 10;
+    }
+    &__box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 9999;
+      transition: all 1s;
+      position: relative;
+    }
+    &--translucent {
+      opacity: 0.2;
+      transition: all .5s;
+    }
+  }
+
+  &__box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    z-index: 9999;
+    transition: all 1s;
+  }
+
   &__btn-container {
     display: flex;
-    width: 50%;
+    width: 100%;
     align-self: center;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0 0 32px 0;
   }
   &__btn {
     flex: 0 1 25%;
     font-size: 18px;
-    padding: 12px;
     border: none;
     cursor: pointer;
     transition: all 0.2s;
+    background-color: transparent;
 
     &.active {
       color: lightsteelblue;
-      letter-spacing: .2em;
+      letter-spacing: .1em;
     }
     &:hover {
       color: lightsteelblue;
-      letter-spacing: .2em;
+      letter-spacing: .1em;
       transition: all 0.2s;
     }
     &:focus {
@@ -46,14 +89,14 @@
 
       // IPHONE X
       &--iphone-x {
-        height: 717px;
-        width: 342px;
+        height: 540px;
+        width: 267px;
         transition: all .3s;
 
         .speaker-container {
           position: absolute;
           top: 0;
-          width: 75%;
+          width: 60%;
           height: 25px;
           background-color: #1f1f1f;
           border-bottom-left-radius: 20px;
@@ -71,7 +114,7 @@
         .inner {
           flex: 12;
           background-color: #1f1f1f;
-          width: 322px;
+          width: 242px;
           position: relative;
           transition: all .3s;
         }
@@ -81,7 +124,7 @@
           position: absolute;
           left: 0;
           top: 0;
-          width: 322px;
+          width: 242px;
           height: 98%;
           z-index: 1;
           opacity: 1;
@@ -97,27 +140,31 @@
           background-size: contain;
           animation: fadex 1s linear;
         }
-        .home-btn-container {
+        .work-btn-container {
           width: 100%;
-          display: none;
+          display: flex;
+          -ms-flex-align: center;
           align-items: center;
+          -ms-flex-pack: center;
           justify-content: center;
           position: absolute;
           bottom: 12px;
+          z-index: 1;
           
-          &__home-btn {
-            width: 50%;
-            height: 6px;
-            border: 1px solid black;
+          &__work-btn {
+            width: 40%;
+            height: 5px;
             border-radius: 3px;
+            background-color: rgba(0,0,0,.6);
+            box-shadow: 2px 1px 3px rgba(255,255,255,0.1);
           }
         }
       }
       
-      // IPHONE 7
-      &--iphone-7 {
-        height: 651px;
-        width: 310px;
+      // IPHONE 8 plus
+      &--iphone-8 {
+        height: 596px;
+        width: 293px;
         transition: all .3s;
 
         .speaker-container {
@@ -136,7 +183,7 @@
         .inner {
           flex: 6;
           background-color: #1f1f1f;
-          width: 290px;
+          width: 293px;
           position: relative;
           transition: all .3s;
         }
@@ -150,7 +197,7 @@
           height: 100%;
           z-index: 1;
           opacity: 1;
-          background-image: url('../../assets/iphone-7.png');
+          background-image: url('../../assets/iphone-8.png');
           background-repeat: no-repeat;
           background-position: 50% 0;
           -ms-background-size: contain;
@@ -160,12 +207,12 @@
           background-size: contain;
           animation: fade7 1s linear;
         }
-        .home-btn-container {
+        .work-btn-container {
           flex: 0 0 10%;
           display: flex;
           align-items: center;
           
-          &__home-btn {
+          &__work-btn {
             width: 50px;
             height: 50px;
             border: 1px solid rgba(0,0,0,0.1);
@@ -176,10 +223,10 @@
         }
       }
 
-      // IPHONE 6
-      &--iphone-6 {
-        height: 600px;
-        width: 304px;
+      // IPHONE 7
+      &--iphone-7 {
+        height: 530px;
+        width: 257px;
         transition: all .3s;
 
         .speaker-container {
@@ -198,7 +245,7 @@
         .inner {
           flex: 20;
           background-color: #1f1f1f;
-          width: 274px;
+          width: 232px;
           position: relative;
           transition: all .3s;
         }
@@ -212,7 +259,7 @@
           height: 100%;
           z-index: 1;
           opacity: 1;
-          background-image: url('../../assets/iphone-6.png');
+          background-image: url('../../assets/iphone-7.png');
           background-repeat: no-repeat;
           background-position: 50% 0;
           -ms-background-size: contain;
@@ -222,14 +269,14 @@
           background-size: contain;
           animation: fade6 1s linear;
         }
-        .home-btn-container {
+        .work-btn-container {
           flex: 1 0 5%;
           display: flex;
           align-items: center;
           
-          &__home-btn {
-            width: 40px;
-            height: 40px;
+          &__work-btn {
+            width: 30px;
+            height: 30px;
             background-color: rgba(255,255,255,0.01);
             box-shadow: 2px 1px 3px rgba(255,255,255,0.1);
             border: 1px solid rgba(0,0,0,0.1);
@@ -238,6 +285,14 @@
         }
       }
     }
+  }
+  .cartoons {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/cartoons.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 

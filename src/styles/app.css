@@ -126,6 +126,9 @@ body {
 progress {
   width: 75%; }
 
+.app-mobile {
+  display: none; }
+
 .app {
   width: 100%; }
 
@@ -142,7 +145,8 @@ progress {
     width: 50%;
     display: flex;
     justify-content: space-around;
-    list-style: none; }
+    list-style: none;
+    padding: 0; }
     .app-header .app-nav__item a {
       text-decoration: none;
       font-size: 20px;
@@ -157,49 +161,25 @@ progress {
   display: flex;
   justify-content: center;
   align-items: center; }
-  .main-container .section {
-    width: 50%;
-    height: 100vh; }
-    .main-container .section__library {
-      width: 15%;
-      height: 100%;
-      background: lightpink;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center; }
-    .main-container .section__selection {
-      width: 15%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center; }
-    .main-container .section__result {
-      width: 70%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center; }
-    .main-container .section__list {
-      width: 100%;
-      height: 50%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0; }
-    .main-container .section__list-item {
-      color: white;
-      font-size: 36px;
-      font-weight: bold;
-      cursor: move; }
 
 .red {
   background: red; }
 
 .green {
   background: green; }
+
+@media only screen and (max-width: 600px) {
+  .app-mobile {
+    display: flex;
+    background: #17012c;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 32px; }
+    .app-mobile__heading {
+      font-family: 'roboto', sans-serif;
+      color: #fff;
+      text-align: center; }
+  .app {
+    display: none; } }

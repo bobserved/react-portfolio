@@ -33,7 +33,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 48px 0 24px 0;
+    padding: 12px 0;
     z-index: 9999;
     transition: all 1s; }
   .work__btn-container {
@@ -232,6 +232,13 @@
             box-shadow: 2px 1px 3px rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 20px; }
+  .work .cartoons {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/cartoons.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
 
 @keyframes fadex {
   0% {

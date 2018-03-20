@@ -1,12 +1,13 @@
 import phone from '../assets/phone-preview.png'
 import matchMaker from '../assets/match-maker-preview.png'
+import cartoons from '../assets/cartoons.png'
 
 const WORKS = {
   items: [
     { id: 0 },
     { id: 1, name: 'phone', img: phone },
     { id: 2 },
-    { id: 3 },
+    { id: 3, name: 'cartoons', img: cartoons },
     { id: 4 },
     { id: 5 },
     { id: 6 },

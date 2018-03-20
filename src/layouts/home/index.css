@@ -1,8 +1,8 @@
-.work {
+.home {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: minmax(25%, 50%); }
-  .work .boxes {
+  .home .boxes {
     height: calc(100vh - 100px);
     width: 100%;
     display: grid;
@@ -12,8 +12,8 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat; }
-    .work .boxes--translucent {
+    .home .boxes--translucent {
       opacity: 0.2;
       transition: all .5s; }
-  .work .something {
+  .home .something {
     background: lightsalmon; }

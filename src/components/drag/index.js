@@ -3,21 +3,26 @@ import { Draggable } from 'react-beautiful-dnd'
 
 import './index.css'
 
-const grid = 8
+const grid = 16
 const getItemStyle = (isDragging, draggableStyle) => ({
-  // some basic styles to make the items look a bit nicer
+  width: '100%',
+  height: '50px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   userSelect: 'none',
-  padding: grid * 2,
-  margin: `0 0 ${grid}px 0`,
-
-  // styles we need to apply on draggables
-  ...draggableStyle
+  padding: `0 ${grid}px`,
+  color: isDragging ? '#fff' : '#222',
+  fontFamily: 'roboto, sans-serif',
+  flex: '1 0 auto',
+  backgroundColor: isDragging ? 'lightgreen' : '',
+  ...draggableStyle,
 })
 
 export const Drag = ({ item, index, id }) => (
   <Draggable key={item.id} draggableId={item.id} index={index}>
     {(provided, snapshot) => (
-      <div>
+      <div style={{ flex: '1 0 auto' }}>
         <div
           ref={provided.innerRef}
           {...provided.draggableProps}
@@ -26,9 +31,8 @@ export const Drag = ({ item, index, id }) => (
             snapshot.isDragging,
             provided.draggableProps.style
           )}
-          className={`draggable draggable__${id}--${snapshot.isDragging ? 'is-dragging' : 'default'}`}
         >
-          {item.name} – {index + 1}
+          {item.name}
         </div>
         {provided.placeholder}
       </div>

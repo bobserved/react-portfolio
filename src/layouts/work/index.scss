@@ -1,3 +1,5 @@
+@import './animations.scss';
+
 .work {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -287,45 +289,61 @@
     }
   }
   .cartoons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    background-image: url('../../assets/cartoons.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
 
-@keyframes fadex {
-  0% {
-    opacity: 0;
-  }
-  33% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade7 {
-  0% {
-    opacity: 0;
-  }
-  33% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade6 {
-  0% {
-    opacity: 0;
-  }
-  33% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+    &__row {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    svg {
+      width: 150px;
+      margin: 20px;
+    }
+    .chuck {
+      width: 150px;
+      .st0{fill:#FF9E73;}
+      .st1{fill:#FFFFFF;}
+      #beak {
+        animation: beak 2s linear infinite;
+      }
+      #right-arm {
+        animation: right-arm 2.5s linear infinite;
+      }
+      #left-arm {
+        animation: left-arm 2.5s linear infinite;
+      }
+    }
+    .buster {
+      .st0{fill:#CCC23E;}
+      .st1{fill:#FFFFFF;}
+      #right-pupil {
+        r: 10.9;
+        animation: pupil 3s linear infinite;
+      }
+    }
+    .sachi {
+      .st0{fill:#92CC36;}
+      .st1{fill:#FFFFFF;}
+      #left-fang {
+        animation: left-fang 1s infinite;
+      }
+      #right-fang {
+        animation: right-fang 1s infinite;
+      }
+    }
+    .frankie {
+      width: 150px;
+      .st0{fill:#32CC91;}
+      .st1{fill:#CC6633;}
+      .st2{fill:#FFFFFF;}
+      #head {
+        animation: big-head 3s linear infinite;
+      }
+    }
   }
 }

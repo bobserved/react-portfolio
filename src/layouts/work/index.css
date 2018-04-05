@@ -1,3 +1,122 @@
+@keyframes fadex {
+  0% {
+    opacity: 0; }
+  33% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade7 {
+  0% {
+    opacity: 0; }
+  33% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade6 {
+  0% {
+    opacity: 0; }
+  33% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes right-arm {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg); }
+  25% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg); }
+  30% {
+    transform-origin: 87% 40%;
+    transform: rotate(10deg); }
+  35% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg); }
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg); } }
+
+@keyframes left-arm {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg); }
+  25% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg); }
+  30% {
+    transform-origin: 14% 40%;
+    transform: rotate(-10deg); }
+  35% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg); }
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg); } }
+
+@keyframes beak {
+  0% {
+    transform-origin: 50% 65%;
+    transform: rotate(45deg); }
+  25% {
+    transform-origin: 50% 65%;
+    transform: rotate(45deg); }
+  50% {
+    transform-origin: 52% 65%;
+    transform: rotate(48deg); }
+  60% {
+    transform-origin: 50% 65%;
+    transform: rotate(45deg); }
+  100% {
+    transform-origin: 50% 65%;
+    transform: rotate(45deg); } }
+
+@keyframes pupil {
+  0% {
+    r: 10.9; }
+  33.333% {
+    r: 15.5; }
+  66.666% {
+    r: 5.9; }
+  100% {
+    r: 10.9; } }
+
+@keyframes left-fang {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%; }
+  50% {
+    transform: rotate(-10deg);
+    transform-origin: 50% 75%; }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%; } }
+
+@keyframes right-fang {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%; }
+  50% {
+    transform: rotate(10deg);
+    transform-origin: 50% 75%; }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%; } }
+
+@keyframes big-head {
+  0% {
+    transform: scale(1); }
+  25% {
+    transform: scale(0.9);
+    transform-origin: 50% 50%; }
+  50% {
+    transform: scale(1.1);
+    transform-origin: 50% 50%; }
+  100% {
+    transform: scale(1); } }
+
 .work {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -233,33 +352,51 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 20px; }
   .work .cartoons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    height: 100%;
-    background-image: url("../../assets/cartoons.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; }
-
-@keyframes fadex {
-  0% {
-    opacity: 0; }
-  33% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fade7 {
-  0% {
-    opacity: 0; }
-  33% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fade6 {
-  0% {
-    opacity: 0; }
-  33% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+    height: 100%; }
+    .work .cartoons__row {
+      display: flex;
+      justify-content: space-around; }
+    .work .cartoons svg {
+      width: 150px;
+      margin: 20px; }
+    .work .cartoons .chuck {
+      width: 150px; }
+      .work .cartoons .chuck .st0 {
+        fill: #FF9E73; }
+      .work .cartoons .chuck .st1 {
+        fill: #FFFFFF; }
+      .work .cartoons .chuck #beak {
+        animation: beak 2s linear infinite; }
+      .work .cartoons .chuck #right-arm {
+        animation: right-arm 2.5s linear infinite; }
+      .work .cartoons .chuck #left-arm {
+        animation: left-arm 2.5s linear infinite; }
+    .work .cartoons .buster .st0 {
+      fill: #CCC23E; }
+    .work .cartoons .buster .st1 {
+      fill: #FFFFFF; }
+    .work .cartoons .buster #right-pupil {
+      r: 10.9;
+      animation: pupil 3s linear infinite; }
+    .work .cartoons .sachi .st0 {
+      fill: #92CC36; }
+    .work .cartoons .sachi .st1 {
+      fill: #FFFFFF; }
+    .work .cartoons .sachi #left-fang {
+      animation: left-fang 1s infinite; }
+    .work .cartoons .sachi #right-fang {
+      animation: right-fang 1s infinite; }
+    .work .cartoons .frankie {
+      width: 150px; }
+      .work .cartoons .frankie .st0 {
+        fill: #32CC91; }
+      .work .cartoons .frankie .st1 {
+        fill: #CC6633; }
+      .work .cartoons .frankie .st2 {
+        fill: #FFFFFF; }
+      .work .cartoons .frankie #head {
+        animation: big-head 3s linear infinite; }
